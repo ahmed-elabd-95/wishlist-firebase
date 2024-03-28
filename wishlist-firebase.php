@@ -16,4 +16,29 @@ function wishlist_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'wishlist_enqueue_scripts');
 
-?>
+
+get_header();
+
+// Query Firebase for wishlist items
+// Implement your Firebase query logic here
+
+if ($wishlist_items) {
+    echo '<ul>';
+    foreach ($wishlist_items as $item) {
+        echo '<li>' . $item . '</li>';
+    }
+    echo '</ul>';
+} else {
+    echo 'Your wishlist is empty.';
+}
+
+get_footer();
+
+// Assign Wishlist Page template to a specific page
+function wishlist_page_template($template) {
+    if (is_page('wishlist')) {
+        $template = plugin_dir_path(__FILE__) . 'wishlist-page.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'wishlist_page_template');

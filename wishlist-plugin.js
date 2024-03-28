@@ -19,6 +19,7 @@ import { initializeApp } from "firebase/app";
             // Add other Firebase config options
         };
         firebase.initializeApp(firebaseConfig);
+        // const app = initializeApp(firebaseConfig);
 
         var wishlistRef = firebase.database().ref('wishlist');
         wishlistRef.push().set({
