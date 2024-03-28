@@ -15,5 +15,5 @@ function wishlist_enqueue_scripts() {
     wp_enqueue_script('wishlist-plugin', plugin_dir_url(__FILE__) . 'wishlist-plugin.js', array('firebase', 'firebase-database', 'jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'wishlist_enqueue_scripts');
-require_once plugin_dir_path(__FILE__) . 'wishlist-page.php';
-require_once plugin_dir_path(__FILE__) . 'wishlist-button.php';
+require_once plugin_dir_path(__FILE__) . './wishlist-page.php';
+require_once plugin_dir_path(__FILE__) . './wishlist-button.php';

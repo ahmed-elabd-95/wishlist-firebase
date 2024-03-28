@@ -1,5 +1,4 @@
 <?php 
-get_header();
 
 // Query Firebase for wishlist items
 // Implement your Firebase query logic here
@@ -14,6 +13,5 @@ if ($wishlist_items) {
     echo 'Your wishlist is empty.';
 }
 
-get_footer();
 
 ?>
