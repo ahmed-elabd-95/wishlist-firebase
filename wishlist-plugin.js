@@ -1,5 +1,28 @@
-import { initializeApp } from "firebase/app";    
     jQuery(document).ready(function($) {
+        $('.add-to-wishlist').on('click', function(e) {
+            e.preventDefault();
+            var productId = $(this).data('product-id');
+        
+            // Send the productId to the wishlist page and Firebase using AJAX or any other method.
+            // You can make an AJAX request to a PHP endpoint that handles the data insertion into Firebase.
+        
+            // Example AJAX request:
+            $.ajax({
+              url: '/wp-admin/admin-ajax.php',
+              type: 'POST',
+              data: {
+                action: 'add_to_wishlist',
+                product_id: productId
+              },
+              success: function(response) {
+                alert('Product added to wishlist!');
+              },
+              error: function(xhr, status, error) {
+                console.log(error);
+              }
+            });
+          });
+      
     // Get the product ID from the page (you may need to modify this based on your theme structure)
     var productId = $('.product').data('product-id');
 
