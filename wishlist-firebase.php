@@ -18,13 +18,25 @@
 // require_once plugin_dir_path(__FILE__) . './wishlist-page.php';
 // require_once plugin_dir_path(__FILE__) . './wishlist-button.php';
 
-function add_custom_button_to_product_page() {
+
+// Add custom button to single product page
+function custom_product_button() {
     global $product;
-    
-    // Check if it's a product page
-    if (is_product()) {
+
+    // Ensure WooCommerce is active
+    if ( ! function_exists( 'is_product' ) ) {
+        return;
+    }
+
+    // Check if we're on a single product page
+    if ( is_product() ) {
         echo '<a href="#" class="add-to-wishlist" data-product-id="<?php echo get_the_ID(); ?>">Add to Wishlist</a>';
     }
 }
-add_action('woocommerce_after_single_product_summary', 'add_custom_button_to_product_page');
+add_action( 'woocommerce_single_product_summary', 'custom_product_button', 30 );
 
+// Enqueue styles for the button
+// function custom_button_styles() {
+//     wp_enqueue_style( 'custom-button-styles', plugins_url( '/css/custom-button.css', __FILE__ ) );
+// }
+// add_action( 'wp_enqueue_scripts', 'custom_button_styles' );
