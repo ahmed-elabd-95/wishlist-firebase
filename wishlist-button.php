@@ -43,13 +43,14 @@ function wishlist_enqueue_scripts() {
     wp_localize_script('wishlist-script', 'wishlist_vars', array(
         'firebase_config' => array(
             // Your Firebase configuration here
-            'apiKey' => 'your_api_key',
-            'authDomain' => 'your_auth_domain',
-            'databaseURL' => 'your_database_url',
-            'projectId' => 'your_project_id',
-            'storageBucket' => 'your_storage_bucket',
-            'messagingSenderId' => 'your_messaging_sender_id',
-            'appId' => 'your_app_id'
+            'apiKey' => 'AIzaSyCrNsSDB7wUlBUbHBfVkc2-YlkGeF0UAB8',
+            'authDomain' => 'page-builder1.firebaseapp.com',
+            // 'databaseURL' => 'your_database_url',
+            'projectId' => 'page-builder1',
+            'storageBucket' => 'page-builder1.appspot.com',
+            'messagingSenderId' => '9136430826',
+            'appId' => '1:9136430826:web:7acaaa1f01eee933238193',
+            'measurementId' => "G-65BFGWVN7P"
         )
     ));
 }
